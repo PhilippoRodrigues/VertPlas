@@ -1,0 +1,53 @@
+{
+  "adicionados": [],
+  "produtos": [
+    {
+      "id": 1,
+      "titulo": "Poliamida",
+      "detalhes": "A poliamida (PA) é um bioplástico produzido a partir de biomassa, mas também pode ser feito com base em petróleo. A vantagem da bio-poliamida é que ela é feita a partir de fontes renováveis, podendo ser produzida a partir de óleo de mamona. Entretanto, a poliamida, que também é chamada de nylon, muito presente em tecidos de roupas, acessórios e estofados, não é biodegradável, mesmo em sua versão produzida a partir da biomassa. O bioplástico de poliamida também pode ser produzido a partir do óleo de rícino, mas uma desvantagem é o seu baixo aproveitamento de terra, sendo necessária uma superfície relativamente ampla para a produção da quantidade necessária de matéria-prima (podendo concorrer com espaço para a produção de alimentos).",
+      "valor": 100,
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKw15QpayDRkC_A9qTC4iy8E0RT2YQ5G4-mzFgbm-bNez9iHBC",
+      "promocao": "Não"
+    },
+    {
+      "id": 2,
+      "titulo": "Bioplástico de camarão",
+      "detalhes": "Cascas de camarão, que são um dos principais resíduos da indústria alimentícia e abundantes no Reino Unido, estão sendo utilizadas para o desenvolvimento de bioplásticos. A ideia é utilizar esse tipo de bioplástico para a produção de sacolas de compras e embalagens de alimentos.\n\nAlém de ser uma fonte renovável, esse tipo de bioplástico é biodegradável, reutiliza resíduos da indústria e ainda possui propriedades antimicrobianas, antibacterianas e biocompatíveis, o que é uma vantagem para a embalagem de alimentos e fármacos.",
+      "valor": 500,
+      "imagem": "https://termovid.com.br/wp-content/uploads/2019/06/la-de-rocha-300x230.png",
+      "promocao": "Não"
+    },
+    {
+      "id": 3,
+      "titulo": "Polibutileno",
+      "detalhes": "O polibutileno tereftalato adipato, também chamado de poliburato, é um dos tipos de bioplásticos produzidos a partir de petróleo, mas que é biodegradável e compostável. Suas propriedades permitem que o poliburato substitua o polietileno de baixa densidade, um plástico produzido a partir do petróleo que não é biodegradável.\n\nO bioplástico de poliburato pode ser utilizado, principalmente, na produção de sacolas. Mas possui a desvantagem de demandar uma fonte não-renovável.",
+      "valor": 210,
+      "imagem": "https://2.bp.blogspot.com/-6E-1NTv2wYY/Vm4NtIWWzRI/AAAAAAAAVV4/wKn3Cl_0u1w/s280/Biopol%25C3%25ADmeros%252C%2BPol%25C3%25ADmeros%2BBiodegrad%25C3%25A1veis%2Be%2BPol%25C3%25ADmeros%2BVerdes.png",
+      "promocao": "Sim"
+    },
+    {
+      "id": 4,
+      "titulo": "polibutilenosuccinato",
+      "detalhes": "O polibutilenosuccinato (PBS) é um tipo de bioplástico que pode ser 100% de base biológica e biodegradável em condições industriais. Esse tipo de bioplástico normalmente é utilizado em utensílios que necessitam de uma capacidade de tolerância a altas temperaturas (100ºC a 200ºC). É um bioplástico cristalino e flexível. O ácido succínico, base biológica da produção do PBS, é feito a partir de fontes renováveis e ajuda a reduzir a pegada de carbono. Cálculos mostram que as emissões de gases de efeito estufa (GEE) podem ser reduzidas em 50% a 80% em comparação com o plástico de origem fóssil. O ácido succínico também tem a vantagem de capturar CO2.",
+      "valor": 490,
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTDh5Cn7CHBgqr3N9m4MNGf4RVGLqXhItJRmHilirv--F0NfQBS",
+      "promocao": "Não"
+    },
+    {
+      "id": 5,
+      "titulo": "Poliácido láctico",
+      "detalhes": "O poliácido lático (PLA) é um bioplástico produzido a partir de bactérias. No processo, elas produzem o ácido lático por meio do processo de fermentação de vegetais ricos em amido, como a beterraba, o milho e a mandioca (entre outros). Os bioplásticos de PLA podem ser utilizados em embalagens alimentícias, embalagens cosméticas, sacolas plásticas de mercado, garrafas, canetas, vidros, tampas, talheres, frascos, copos, bandejas, pratos, filmes para a produção de tubetes, filamentos de impressão 3D, dispositivos médicos, tecidos não-trançados, entre outros.\n\nO PLA é biodegradável, reciclável mecânica e quimicamente, biocompatível e bioabsorvível. Em comparação aos plásticos convencionais de petróleo, tais como o poliestireno (PS) e polietileno (PE), que demoram de 500 a 1000 anos para se degradarem, o PLA ganha em disparada, pois sua degradação leva de seis meses a dois anos para acontecer. E quando é descartado corretamente transforma-se em substâncias inofensivas, porque é facilmente degradado pela água. A desvantagem é que o PLA é um plástico de produção encarecida e sua compostagem só ocorre em condições ideais. Outro problema é que as normas americanas e brasileiras permitem a mistura de PLA a outros tipos de plásticos não biodegradáveis, o que, apesar de melhorar suas qualidades em termos de uso, prejudica sua qualidade em termos ambientais. Mas não podemos confundi-lo com o plástico de amido, conhecido como amido termoplástico, pois no processo de produção do PLA o amido é usado simplesmente para se chegar ao ácido lático. Diferentemente do plástico de amido termoplástico, que tem o amido como matéria-prima principal. Desses dois tipos, o PLA é vantajoso por ser mais resistente e se parecer mais com um plástico normal, além de ser 100% um plástico biodegradável (se dispuser de condições ideais).",
+      "valor": 1010,
+      "imagem": "https://mitiendacredifiel.com.mx/media/catalog/product/b/2/b2e9867b11b1abcd32337f3da64b2697-catalog.jpg",
+      "promocao": "Sim"
+    },
+    {
+      "id": 6,
+      "titulo": "Bioplástico de algas",
+      "detalhes": "A empresa Algix desenvolve um importante insumo para a produção de bioplásticos: biomassa de algas. A produção excessiva de algas em decorrência da poluição tem sido um significativo problema que acontece devido à eutrofização (para entender melhor esse tema dê uma olhada na matéria: \"O que é eutrofização?\"). Na produção de biomassa de algas para o desenvolvimento de bioplástico é feita a criação combinada de peixes (para o consumo) e algas. As vantagens desses tipos de bioplásticos são a sua possibilidade de biodegradação, origem de fonte renovável, baixo custo de produção e não concorrência com terras aráveis.",
+      "valor": 431,
+      "imagem": "https://noticias.up.pt/wp-content/uploads/2014/02/algas.jpg",
+      "promocao": "Sim"
+    }
+  ]
+}
