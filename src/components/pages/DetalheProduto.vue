@@ -71,6 +71,7 @@ export default {
   margin-top: 5%;
   margin-bottom: 5%;
   font-size: 2em;
+  color: #52706b !important;
 }
 
 .form-detalhes {

@@ -10,7 +10,7 @@ const getters = {
   listaProdutos: state => state.produtos,
   itensAdicionados: state => state.adicionados,
   produtoById: state => id => state.produtos.filter(prod => prod.id === id)[0],
-  cartLength() {
+  produtosCarrinho() {
     return state.adicionados.length;
   }
 };
@@ -36,6 +36,7 @@ const actions = {
       titulo: adicionar_produto.titulo,
       detalhes: adicionar_produto.detalhes,
       valor: adicionar_produto.valor,
+      valor_promocao: adicionar_produto.valor_promocao,
       imagem: adicionar_produto.imagem,
       promocao: adicionar_produto.promocao,
       completed: false
@@ -48,8 +49,8 @@ const actions = {
   atualizaProduto({ commit }, atualizaProd) {
     commit("atualizaProduto", atualizaProd);
   },
-  addToCart({ commit }, id) {
-    commit("ADD_TO_CART", id);
+  adicionarNoCarrinho({ commit }, id) {
+    commit("adicionarNoCarrinho", id);
   }
 };
 
@@ -67,7 +68,7 @@ const mutations = {
       state.produtos.splice(index, 1, atualizaProd);
     }
   },
-  ADD_TO_CART(state, id) {
+  adicionarNoCarrinho(state, id) {
     state.adicionados.push(id);
   }
 };

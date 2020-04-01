@@ -1,21 +1,6 @@
 <template>
-  <div id="produto">
-    <b-row v-if="exibeProduto" class="cards-home">
-      <h1>Produtos</h1>
-    </b-row>
-
-    <AdicionarProduto />
-
-    <b-button
-      href="#"
-      class="btn-adicionar"
-      alt="adicionar produto"
-      title="adicionar produto"
-    >
-      <router-link :to="{ name: 'adicionarProduto' }">
-        Adicionar produto
-      </router-link>
-    </b-button>
+  <div id="promocoes">
+    <b-form-text class=" container-fluid titulo-form">Promoções</b-form-text>
 
     <b-row class="container-fluid cards">
       <b-card
@@ -27,11 +12,13 @@
         img-top
         class="mb-2 container card-produto"
         :class="{ 'card-produto-promocao': produto.promocao === 'Sim' }"
+        v-show="produto.promocao === 'Sim'"
       >
-        <b-card-text class="preco-card" alt="preço" title="preço">
-                     Preço: {{ produto.valor | formatarPreco("R$") }}
-          <!--            Preço: R${{ produto.valor }}/Kg-->
-<!--          Preço: {{ // produto.valor }}-->
+        <b-card-text class="preco-card-antigo">
+          De: {{ produto.valor | currencyMask("R$") }}
+        </b-card-text>
+        <b-card-text class="preco-card">
+          Por: {{ produto.valor_promocao | currencyMask("R$") }}
         </b-card-text>
 
         <b-row class="botoes">
@@ -51,27 +38,13 @@
           <b-button
             href="#"
             class="btn-comprar"
-            @click="adicionarAoCarrinho(produto)"
+            @click="adicionarNoCarrinho(produto)"
             alt="comprar"
             title="comprar"
           >
             Comprar</b-button
           >
         </b-row>
-
-        <b-button
-          class="botao-apagar alert-danger"
-          alt="apagar"
-          title="apagar"
-          @click="excluiProduto(produto.id)"
-        >
-          <b-icon-trash-fill
-            @click="excluiProduto(produto.id)"
-            class="icon-trash"
-            alt="apagar"
-            title="apagar"
-          ></b-icon-trash-fill>
-        </b-button>
       </b-card>
     </b-row>
   </div>
@@ -79,51 +52,36 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import AdicionarProduto from "./AdicionarProduto";
-
 export default {
-  name: "Produto",
-  components: {
-    AdicionarProduto
-  },
+  name: "Promocoes",
   data() {
     return {
       exibeProduto: true,
-      carrinho: [],
-      banner: require("../assets/banner-plastico.jpg"),
-      carouselUm: require("../assets/sale.jpg"),
-      slide: 0,
-      sliding: null
+      carrinho: []
     };
   },
   methods: {
-    onSlideStart() {
-      this.sliding = true;
-    },
-    onSlideEnd() {
-      this.sliding = false;
-    },
-    adicionarAoCarrinho: function(produto) {
-      this.carrinho.push(produto.id);
+    adicionarNoCarrinho(id) {
+      this.$store.dispatch("adicionarNoCarrinho", id);
     },
     mostrarCarrinho() {
       this.$router.push({ name: "cart" });
     },
-    quantidadeNoCarrinhoPorProduto: function(produto) {
-      this.carrinho.filter(elem => elem === produto.id).length;
-    },
     ...mapActions(["getProdutos", "excluiProduto", "atualizaProduto"])
   },
   computed: {
-    ...mapGetters(["listaProdutos"]),
-
-    quantidadeNoCarrinho: function() {
-      return this.carrinho.length;
-    }
+    ...mapGetters(["listaProdutos"])
   },
-
   created() {
     this.getProdutos();
+  },
+  filters: {
+    currencyMask(valor, simbolo) {
+      if (!parseFloat(valor)) {
+        return "";
+      }
+      return simbolo + " " + valor.replace(".", ",") + "/kg";
+    }
   }
 };
 </script>
@@ -131,6 +89,17 @@ export default {
 <style scoped>
 * {
   text-decoration: none;
+}
+
+/* Promoções */
+
+.titulo-form {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 3em;
+  font-weight: bold;
+  color: #52706b !important;
 }
 
 /*Cards*/
@@ -146,6 +115,7 @@ export default {
   flex-wrap: wrap;
   padding-bottom: 5%;
   height: auto;
+  margin-bottom: 5%;
 }
 
 .card-title {
@@ -158,9 +128,14 @@ export default {
   background-color: #f8faf5;
 }
 
+.preco-card-antigo {
+  text-decoration: line-through;
+}
+
 .preco-card {
   text-align: center;
   vertical-align: bottom;
+  font-weight: bold;
 }
 
 .card-produto img {
@@ -171,7 +146,7 @@ export default {
 
 .card-produto {
   border-radius: 8%;
-  border: #498d81 solid 5px;
+  border: #52706b solid 5px;
   text-align: center;
   width: 21%;
   padding: 0;
@@ -179,7 +154,7 @@ export default {
 }
 
 .card-produto-promocao {
-  background-color: orange;
+  background-color: #ffd19a;
 }
 
 /*Botões*/
@@ -190,39 +165,18 @@ export default {
 }
 
 .btn-detalhe:hover,
-.btn-comprar:hover,
-.btn-adicionar {
-  background-color: yellow;
+.btn-comprar:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
 }
 
 a:visited,
 a:link {
   text-decoration: none;
-  background-color: #498d81;
-  color: #b0e9df;
-}
-
-a:visited:hover {
-  background-color: yellow;
-}
-
-a:visited:hover,
-a:link:hover {
-  background-color: yellow;
-}
-
-.btn-adicionar {
-  margin-left: 6%;
-  margin-top: 5%;
-}
-
-.botao-apagar {
-  margin-top: 10%;
-  width: 100%;
-}
-
-.botao-apagar:hover {
-  background-color: darkred;
+  background-color: #b0e9df;
+  color: #498d81;
+  font-weight: bold;
+  box-shadow: none;
 }
 
 @media (max-width: 500px) {
@@ -238,12 +192,6 @@ a:link:hover {
   .botoes {
     width: auto;
     margin-bottom: 4%;
-  }
-
-  .btn-adicionar {
-    margin-left: 0;
-    margin-top: 5%;
-    margin-bottom: 5%;
   }
 }
 </style>

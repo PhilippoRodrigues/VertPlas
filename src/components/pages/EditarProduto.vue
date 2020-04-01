@@ -136,7 +136,9 @@ export default {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: bold;
+  color: #52706b !important;
 }
 
 .id-produto {

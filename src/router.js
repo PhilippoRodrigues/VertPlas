@@ -1,15 +1,15 @@
 import VueRouter from "vue-router";
-import Home from "./components/Home";
-import Carrinho from "./components/Carrinho";
-import Produtos from "./components/Produtos";
-import Sobre from "./components/Sobre";
-import Contato from "./components/Contato";
-import Promocoes from "./components/Promocoes";
-import AdicionarProduto from "./components/AdicionarProduto";
-import DetalheProduto from "./components/DetalheProduto";
-import EditarProduto from "./components/EditarProduto";
-import Login from "./components/Login";
-import Cadastro from "./components/Cadastro";
+import Home from "./components/pages/Home";
+import Carrinho from "./components/pages/Carrinho";
+import Produtos from "./components/pages/Produtos";
+import Sobre from "./components/pages/Sobre";
+import Contato from "./components/pages/Contato";
+import Promocoes from "./components/pages/Promocoes";
+import AdicionarProduto from "./components/pages/AdicionarProduto";
+import DetalheProduto from "./components/pages/DetalheProduto";
+import EditarProduto from "./components/pages/EditarProduto";
+import Login from "./components/pages/Login";
+import Cadastro from "./components/pages/Cadastro";
 
 export default new VueRouter({
   mode: "history",

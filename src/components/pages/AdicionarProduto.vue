@@ -1,12 +1,14 @@
 <template>
   <div class="container adiciona">
-    <b-button :to="{ name: 'produtos' }">
-      Voltar para produtos
-    </b-button>
 
     <b-form-text class=" container-fluid titulo-form"
       >Adicionar produto</b-form-text
     >
+
+    <b-button class="btn-voltar-produtos" :to="{ name: 'produtos' }">
+      Voltar para produtos
+    </b-button>
+
     <b-form
       class="form-adiciona"
       @submit.prevent="onSubmit"
@@ -26,7 +28,6 @@
           alt="nome do produto"
           title="nome do produto"
           placeholder="Adicione o nome do produto"
-          autofocus
         ></b-form-input>
       </b-form-group>
 
@@ -45,7 +46,6 @@
         <b-form-input
           id="input-3"
           v-model="adicionar_produto.valor"
-          @keyup="formatarPreco('R$')"
           type="number"
           required
           alt="valor do produto"
@@ -92,6 +92,7 @@
           title="adicionar"
           >Adicionar</b-button
         >
+<!-- :to="{ name: 'produtos' }"-->
         <b-button
           type="reset"
           variant="danger"
@@ -145,16 +146,31 @@ export default {
         this.show = true;
       });
     }
+  },
+  filters: {
+    currencyMask(valor, simbolo) {
+      if (!parseInt(valor)) {
+        return "";
+      }
+      return simbolo + " " + valor.replace(".", ",") + "/kg";
+    }
   }
 };
 </script>
 
 <style scoped>
+
+  .btn-voltar-produtos {
+    margin-bottom: 5%;
+  }
+
 .titulo-form {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: bold;
+  color: #52706b !important;
 }
 
 .form-adiciona {

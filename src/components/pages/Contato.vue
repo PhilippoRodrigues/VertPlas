@@ -122,13 +122,15 @@ export default {
 
 <style scoped>
 .contato {
-  margin-bottom: 20%;
+  height: 80%;
 }
 .titulo-form {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: bold;
+  color: #52706b !important;
 }
 .form-contato {
   height: 100%;

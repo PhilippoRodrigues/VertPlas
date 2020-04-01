@@ -77,13 +77,14 @@ export default {
 .login {
   margin-bottom: 21%;
   margin-top: 10%;
+  color: #52706b !important;
 }
 .titulo-form {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
-  font-size: 2em;
-  vertical-align: middle;
+  font-size: 3em;
+  font-weight: bold;
 }
 .form-login {
   height: 100%;

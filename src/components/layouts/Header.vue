@@ -2,12 +2,16 @@
   <div>
     <b-navbar toggleable="lg" class="navbar">
       <b-navbar-brand href="#" class="brand-nav" alt="verplas" title="vertplas"
-        >VertPlas<b-img
+        >
+        <router-link class="brand-nav-text" :to="{ name: 'home' }"
+        >VertPlas
+        <b-img
           class="img-brand"
           :src="imageBrand"
           alt="verplas"
           title="vertplas"
         ></b-img>
+        </router-link>
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -20,17 +24,17 @@
               placeholder="Search"
               alt="search"
               title="search"
-            ></b-form-input>
+            >
+            </b-form-input>
 
-            <b-icon
+            <b-icon-search
               size="sm"
-              icon="search"
               class="my-2 my-sm-0 input-icon-nav"
               alt="search"
               title="search"
               type="submit"
-              >Search
-            </b-icon>
+            >Search
+            </b-icon-search>
 
             <b-navbar-nav class="nav-items row">
               <b-nav-item class="item1" href="#" alt="home" title="home">
@@ -85,8 +89,8 @@
                 title="carrinho"
                 @click="mostrarCarrinho"
               ></b-img>
-              <b-badge class="badge" v-if="cartLength > 0">
-                {{ cartLength }}</b-badge>
+              <b-badge class="badge" v-if="produtosCarrinho > 0">
+                {{ produtosCarrinho }}</b-badge>
             </router-link
             >
             <router-link :to="{ name: 'login' }" class="row row-cols-sm-12">
@@ -106,14 +110,15 @@
 </template>
 
 <script>
+
 export default {
   name: "Header",
   data() {
     return {
       carrinho: [],
-      imageCart: require("../assets/icons/iconCart.svg"),
-      imageLogin: require("../assets/icons/login.svg"),
-      imageBrand: require("../assets/vp_preto.svg")
+      imageCart: require("../../assets/icons/iconCart.svg"),
+      imageLogin: require("../../assets/icons/login.svg"),
+      imageBrand: require("../../assets/vp_preto.svg"),
     };
   },
   methods: {
@@ -122,10 +127,9 @@ export default {
     },
   },
   computed: {
-    cartLength() {
-      return this.$store.getters.cartLength
+    produtosCarrinho() {
+      return this.$store.getters.produtosCarrinho
     },
-
   }
 };
 </script>
@@ -145,6 +149,7 @@ export default {
   align-items: normal;
   padding-left: 8%;
   height: 8em;
+  margin-top: 0;
 }
 
 .navbar-nav,
@@ -157,11 +162,15 @@ export default {
 }
 
 .brand-nav {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  /*margin-left: 2%;*/
   vertical-align: middle;
   margin-top: 0.4em;
+}
+
+.brand-nav .brand-nav-text {
+  /*color: #52acba;*/
+  color: #384a47;
 }
 
 .img-brand {
@@ -197,10 +206,11 @@ export default {
   align-self: center;
   display: flex;
   margin-left: 0.5%;
+  font-weight: bold;
 }
 
 .nav-items a:hover {
-  color: cadetblue;
+  color: #83c5b8;
 }
 
 a:visited,
