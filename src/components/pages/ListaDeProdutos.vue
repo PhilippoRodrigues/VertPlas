@@ -113,7 +113,7 @@ export default {
 
   .cards-home,
   .cards {
-    background-color: #f8faf5;
+    /*background-color: #f8faf5;*/
   }
 
   .preco-card {
@@ -122,14 +122,14 @@ export default {
   }
 
   .card-produto img {
-    border-top-left-radius: 9%;
-    border-top-right-radius: 9%;
+    /*border-top-left-radius: 9%;*/
+    /*border-top-right-radius: 9%;*/
     height: 50%;
   }
 
   .card-produto {
-    border-radius: 8%;
-    border: #52706b solid 5px;
+    /*border-radius: 8%;*/
+    /*border: #52706b solid 5px;*/
     text-align: center;
     max-width: 20%;
     padding: 0;
@@ -172,12 +172,16 @@ export default {
 
     .card-produto {
       max-width: 70%;
-      margin: auto;
+      text-align: center;
+      margin-left: 10%;
+    }
+
+    .preco-card {
+      margin-bottom: 20%;
     }
 
     .botoes {
       width: auto;
-      margin-bottom: 4%;
     }
   }
 </style>

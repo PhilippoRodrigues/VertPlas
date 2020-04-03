@@ -129,4 +129,12 @@ export default {
     font-size: 120%;
   }
 
+  /* Media */
+
+  @media (max-width: 500px) {
+    .sem-produto-inserido {
+      height: auto;
+    }
+  }
+
 </style>

@@ -89,8 +89,12 @@
                 title="carrinho"
                 @click="mostrarCarrinho"
               ></b-img>
-              <b-badge class="badge" v-if="produtosCarrinho > 0">
-                {{ produtosCarrinho }}</b-badge>
+              <div>
+                <div
+                class="badge" v-if="produtosCarrinho > 0">
+                {{ produtosCarrinho }}
+                  </div>
+              </div>
             </router-link
             >
             <router-link :to="{ name: 'login' }" class="row row-cols-sm-12">
@@ -165,11 +169,10 @@ export default {
   font-size: 2.5rem;
   font-weight: bold;
   vertical-align: middle;
-  margin-top: 0.4em;
+  margin-top: 0.5em;
 }
 
 .brand-nav .brand-nav-text {
-  /*color: #52acba;*/
   color: #384a47;
 }
 
@@ -232,29 +235,83 @@ a:link {
   justify-content: space-evenly;
 }
 
-.icons-nav > img {
-  align-items: center;
-}
-
 .imagem-carrinho,
 .imagem-login {
   width: 7rem;
   padding-right: 60%;
 }
 
-.imagem-carrinho {
-  margin-top: 0;
-  display: inline;
-}
-
 .badge {
-  margin-left: 40%;
-  margin-bottom: 10%;
+  margin-left: -5%;
+  margin-top: 2%;
   border-radius: 100%;
   font-size: 90%;
   display: flex;
+  position: absolute;
   background-color: lightgray;
   color: black;
-  justify-content: flex-end;
 }
+  /* Badge */
+
+  @media (max-width: 500px) {
+
+    .brand-nav {
+      text-align: center;
+    }
+
+    .navbar-nav {
+      width: 100% !important;
+    }
+
+    .form-inline .form-control {
+      margin-top: 15%;
+      width: 90%;
+    }
+
+    .input-icon-nav {
+      margin-top: auto !important;
+      margin-bottom: 0 !important;
+    }
+    .imagem-carrinho, .imagem-login {
+      width: 4rem;
+      display: block;
+      flex-flow: column;
+      padding-right: 0;
+      margin-bottom: 55%;
+    }
+
+    .icons-nav {
+      /*display: flex;*/
+      /*text-align: center;*/
+      /*justify-content: space-between;*/
+    }
+
+    .imagem-carrinho {
+      margin-right: 4.5rem;
+    }
+
+    .imagem-login {
+      margin-left: 30%;
+      margin-bottom: 110%;
+
+    }
+
+    .badge {
+      margin-left: -17%;
+      margin-top: 10%;
+    }
+    .form-inline {
+      height: auto;
+      justify-content: center;
+      margin-top: 0;
+
+    }
+
+    .nav-items {
+      display: inline;
+      width: 100%;
+      margin-top: 5%;
+      text-align: center;
+    }
+  }
 </style>

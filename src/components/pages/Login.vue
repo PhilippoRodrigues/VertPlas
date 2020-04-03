@@ -113,6 +113,7 @@ export default {
 @media (max-width: 500px) {
   .login {
     margin-bottom: 70%;
+    height: 50%;
   }
 }
 </style>

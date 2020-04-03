@@ -20,9 +20,9 @@ export default {
 
 <style>
 
-    html {
-        background-color: #f8faf5;
-    }
+    /*html {*/
+    /*    background-color: #f8faf5;*/
+    /*}*/
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
