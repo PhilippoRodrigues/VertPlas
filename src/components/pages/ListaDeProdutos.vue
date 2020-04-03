@@ -160,13 +160,12 @@ export default {
 
   .botoes {
     justify-content: space-around;
-    /*vertical-align: bottom;*/
     display: flex;
   }
 
   .btn-detalhe:hover,
   .btn-comprar:hover,
-  .btn-trash {
+  .botao-apagar:hover {
     transform: scale(1.2);
     transition: 0.3s ease-in-out;
   }

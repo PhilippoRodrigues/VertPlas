@@ -1,16 +1,15 @@
 <template>
   <div>
     <b-navbar toggleable="lg" class="navbar">
-      <b-navbar-brand href="#" class="brand-nav" alt="verplas" title="vertplas"
-        >
+      <b-navbar-brand href="#" class="brand-nav" alt="verplas" title="vertplas">
         <router-link class="brand-nav-text" :to="{ name: 'home' }"
-        >VertPlas
-        <b-img
-          class="img-brand"
-          :src="imageBrand"
-          alt="verplas"
-          title="vertplas"
-        ></b-img>
+          >VertPlas
+          <b-img
+            class="img-brand"
+            :src="imageBrand"
+            alt="verplas"
+            title="vertplas"
+          ></b-img>
         </router-link>
       </b-navbar-brand>
 
@@ -33,7 +32,7 @@
               alt="search"
               title="search"
               type="submit"
-            >Search
+              >Search
             </b-icon-search>
 
             <b-navbar-nav class="nav-items row">
@@ -90,13 +89,11 @@
                 @click="mostrarCarrinho"
               ></b-img>
               <div>
-                <div
-                class="badge" v-if="produtosCarrinho > 0">
-                {{ produtosCarrinho }}
-                  </div>
+                <div class="badge" v-if="produtosCarrinho > 0">
+                  {{ produtosCarrinho }}
+                </div>
               </div>
-            </router-link
-            >
+            </router-link>
             <router-link :to="{ name: 'login' }" class="row row-cols-sm-12">
               <b-img
                 :src="imageLogin"
@@ -114,7 +111,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Header",
   data() {
@@ -122,18 +118,18 @@ export default {
       carrinho: [],
       imageCart: require("../../assets/icons/iconCart.svg"),
       imageLogin: require("../../assets/icons/login.svg"),
-      imageBrand: require("../../assets/vp_preto.svg"),
+      imageBrand: require("../../assets/vp_preto.svg")
     };
   },
   methods: {
     mostrarCarrinho() {
       this.$router.push({ name: "cart" });
-    },
+    }
   },
   computed: {
     produtosCarrinho() {
-      return this.$store.getters.produtosCarrinho
-    },
+      return this.$store.getters.produtosCarrinho;
+    }
   }
 };
 </script>
@@ -250,60 +246,59 @@ a:link {
   background-color: lightgray;
   color: black;
 }
-  /* Badge */
+/* Badge */
 
-  @media (max-width: 500px) {
-
-    .brand-nav {
-      text-align: center;
-    }
-
-    .navbar-nav {
-      width: 100% !important;
-    }
-
-    .form-inline .form-control {
-      margin-top: 15%;
-      width: 90%;
-    }
-
-    .input-icon-nav {
-      margin-top: auto !important;
-      margin-bottom: 0 !important;
-    }
-    .imagem-carrinho, .imagem-login {
-      width: 4rem;
-      display: block;
-      flex-flow: column;
-      padding-right: 0;
-      margin-bottom: 55%;
-    }
-
-    .imagem-carrinho {
-      margin-right: 4.5rem;
-    }
-
-    .imagem-login {
-      margin-left: 30%;
-      margin-bottom: 110%;
-
-    }
-
-    .badge {
-      margin-left: -17%;
-      margin-top: 10%;
-    }
-    .form-inline {
-      height: auto;
-      justify-content: center;
-      margin-top: 0;
-    }
-
-    .nav-items {
-      display: inline;
-      width: 100%;
-      margin-top: 5%;
-      text-align: center;
-    }
+@media (max-width: 500px) {
+  .brand-nav {
+    text-align: center;
   }
+
+  .navbar-nav {
+    width: 100% !important;
+  }
+
+  .form-inline .form-control {
+    margin-top: 15%;
+    width: 90%;
+  }
+
+  .input-icon-nav {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+  }
+  .imagem-carrinho,
+  .imagem-login {
+    width: 4rem;
+    display: block;
+    flex-flow: column;
+    padding-right: 0;
+    margin-bottom: 55%;
+  }
+
+  .imagem-carrinho {
+    margin-right: 4.5rem;
+  }
+
+  .imagem-login {
+    margin-left: 30%;
+    margin-bottom: 110%;
+  }
+
+  .badge {
+    margin-left: -17%;
+    margin-top: 10%;
+  }
+  .form-inline {
+    height: auto;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .nav-items {
+    display: inline;
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+  }
+}
 </style>
