@@ -25,7 +25,7 @@
         alt="slide 2"
         title="slide 2"
       >
-        <h1 style="color: black">Uma frase qualquer</h1>
+        <h1 class="descricao-banner" style="color: black">Uma frase qualquer</h1>
       </b-carousel-slide>
 
       <b-carousel-slide
@@ -111,4 +111,9 @@ export default {
 .banner img {
   width: 100%;
 }
+
+  .descricao-banner {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
 </style>

@@ -128,9 +128,10 @@ export default {
 </script>
 
 <style scoped>
-.editar {
-  background-color: #f8faf5;
-}
+
+  .editar {
+    margin-top: 10%;
+  }
 
 .titulo-form {
   text-align: center;
@@ -138,7 +139,7 @@ export default {
   margin-bottom: 5%;
   font-size: 3em;
   font-weight: bold;
-  color: #52706b !important;
+  color: #004F5A !important;
 }
 
 .id-produto {
@@ -153,10 +154,19 @@ export default {
 
 .botoes {
   justify-content: center;
-  margin-bottom: 5%;
+  /*margin-bottom: 5%;*/
 }
 
 .btn-reset {
   margin-left: 1%;
+}
+
+/* Responsividade */
+
+@media (max-width: 500px) {
+
+  .titulo-form {
+    margin-top: 50%;
+  }
 }
 </style>

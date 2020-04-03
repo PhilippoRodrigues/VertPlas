@@ -1,5 +1,5 @@
 <template>
-  <div id="produto">
+  <div class="produtos">
 
     <lista-de-produtos />
     <Promocoes />
@@ -29,4 +29,5 @@ export default {
 * {
   text-decoration: none;
 }
+
 </style>

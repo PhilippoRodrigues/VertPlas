@@ -1,5 +1,5 @@
 <template>
-  <div id="promocoes">
+  <div class="promocoes">
     <b-form-text class=" container-fluid titulo-form">Promoções</b-form-text>
 
     <b-row class="container-fluid cards">
@@ -44,6 +44,21 @@
           >
             Comprar</b-button
           >
+
+          <b-button
+                  class="botao-apagar alert-danger"
+                  alt="apagar"
+                  title="apagar"
+                  @click="excluiProduto(produto.id)"
+          >
+            <b-icon-trash-fill
+                    @click="excluiProduto(produto.id)"
+                    class="icon-trash"
+                    alt="apagar"
+                    title="apagar"
+            ></b-icon-trash-fill>
+          </b-button>
+
         </b-row>
       </b-card>
     </b-row>
@@ -91,41 +106,52 @@ export default {
   text-decoration: none;
 }
 
-/* Promoções */
+/* Body */
+
+.promocoes {
+  background-color: #F7CCBB;
+}
+
+.form-text {
+  margin-top: 0;
+}
+
+/* Título */
 
 .titulo-form {
   text-align: center;
-  margin-top: 5%;
+  padding-top: 5%;
   margin-bottom: 5%;
   font-size: 3em;
   font-weight: bold;
-  color: #52706b !important;
+  color: #004F5A !important;
+  background-color: #F7CCBB;
 }
 
 /*Cards*/
 
 .cards-home {
   justify-content: center;
-  margin-top: 5%;
+  padding-top: 5%;
 }
 
 .cards {
   justify-content: space-between;
   display: flex;
-  flex-wrap: wrap;
   padding-bottom: 5%;
   height: auto;
-  margin-bottom: 5%;
 }
 
 .card-title {
   font-size: 130%;
   font-weight: bold;
+  color: #E97142;
 }
 
-.cards-home,
 .cards {
-  background-color: #f8faf5;
+  background-color: #F7CCBB;
+  color: #DE9F8C;
+  padding-bottom: 5%;
 }
 
 .preco-card-antigo {
@@ -136,38 +162,40 @@ export default {
   text-align: center;
   vertical-align: bottom;
   font-weight: bold;
+  color: #E97142;
 }
 
 .card-produto img {
-  border-top-left-radius: 9%;
-  border-top-right-radius: 9%;
   height: 50%;
 }
 
 .card-produto {
-  border-radius: 8%;
-  border: #52706b solid 5px;
   text-align: center;
   width: 21%;
   padding: 0;
   margin: 5%;
-}
-
-.card-produto-promocao {
-  background-color: #ffd19a;
+  border-color: black;
 }
 
 /*Botões*/
 
 .botoes {
   justify-content: space-around;
-  vertical-align: bottom;
 }
 
 .btn-detalhe:hover,
 .btn-comprar:hover {
   transform: scale(1.2);
   transition: 0.3s ease-in-out;
+}
+
+.botao-apagar {
+  margin-top: 10%;
+  width: 100%;
+}
+
+.botao-apagar:hover {
+  background-color: darkred;
 }
 
 a:visited,
@@ -184,9 +212,11 @@ a:link {
     display: block;
     justify-content: center;
   }
+
   .card-produto {
     width: 70%;
-    margin: auto;
+    text-align: center;
+    margin-left: 20%;
   }
 
   .botoes {

@@ -30,7 +30,8 @@ export default {
   /*text-align: center;*/
   color: #2c3e50;
   height: 70em;
-  background-color: #f8faf5;
+  /*background-color: #f8faf5;*/
+    background-color: white;
 }
     body {
         background-color: #f7f9f0;

@@ -70,7 +70,6 @@
       <b-row class="botoes">
         <b-button
           type="submit"
-          variant="primary"
           alt="cadastrar"
           title="cadastrar"
           >Cadastrar</b-button
@@ -133,7 +132,7 @@ export default {
   margin-bottom: 5%;
   font-size: 3em;
   font-weight: bold;
-  color: #52706b !important;
+  color: #004F5A !important;
 }
 
 .form-cadastro {
@@ -146,13 +145,25 @@ export default {
   margin-top: 5%;
 }
 
+.btn-secondary {
+  text-decoration: none;
+  background-color: #b0e9df;
+  color: #498d81;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-color: #004F5A;
+}
+
 .btn-reset {
   margin-left: 1%;
 }
 
 @media (max-width: 500px) {
   .cadastro {
-    margin-bottom: 70%;
+    margin-top: 50%;
   }
 }
 </style>

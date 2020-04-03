@@ -63,7 +63,6 @@
       <b-row class="botoes">
         <b-button
           type="submit"
-          variant="primary"
           alt="adicionar"
           title="adicionar"
           >Adicionar</b-button
@@ -130,25 +129,33 @@ export default {
   margin-bottom: 5%;
   font-size: 3em;
   font-weight: bold;
-  color: #52706b !important;
+  color: #004F5A !important;
 }
 .form-contato {
   height: 100%;
   font-weight: bold;
 }
 
+/* Botões */
+
 .botoes {
   justify-content: center;
   margin-top: 5%;
 }
 
-.btn-reset {
-  margin-left: 1%;
+.btn-secondary {
+  text-decoration: none;
+  background-color: #b0e9df;
+  color: #498d81;
+  font-weight: bold;
+  box-shadow: none;
 }
 
-@media (max-width: 500px) {
-  .contato {
-    margin-bottom: 70%;
-  }
+.btn-secondary:hover {
+  background-color: #004F5A;
+}
+
+.btn-reset {
+  margin-left: 1%;
 }
 </style>

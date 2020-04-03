@@ -40,6 +40,6 @@ export default {
       margin-bottom: 5%;
       font-size: 3em;
       font-weight: bold;
-      color: #52706b !important;
+      color: #004F5A !important;
     }
 </style>

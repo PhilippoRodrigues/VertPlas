@@ -39,8 +39,23 @@
           title="comprar"
           @click="adicionarNoCarrinho(produto)"
         >
-          Comprar</b-button
+          Comprar
+        </b-button>
+
+        <b-button
+                class="botao-apagar alert-danger"
+                alt="apagar"
+                title="apagar"
+                @click="excluiProduto(produto.id)"
         >
+          <b-icon-trash-fill
+                  @click="excluiProduto(produto.id)"
+                  class="icon-trash"
+                  alt="apagar"
+                  title="apagar"
+          ></b-icon-trash-fill>
+        </b-button>
+
       </b-row>
     </b-card>
   </b-row>
@@ -60,7 +75,7 @@ export default {
     adicionarNoCarrinho(id) {
       this.$store.dispatch("adicionarNoCarrinho", id);
     },
-    ...mapActions(["getProdutos", "adicionarNoCarrinho"])
+    ...mapActions(["getProdutos", "adicionarNoCarrinho", "excluiProduto"])
   },
   computed: {
     ...mapGetters(["listaProdutos"])
@@ -81,15 +96,25 @@ export default {
 
 <style scoped>
 
+  /* Body */
+
+  .lista-de-produtos {
+    background-color: #004F5A;
+  }
+
+  .form-text {
+    margin-top: 0;
+  }
+
   /*Título Produtos */
 
   .titulo-form {
     text-align: center;
-    margin-top: 5%;
+    padding-top: 5%;
     margin-bottom: 5%;
     font-size: 3em;
     font-weight: bold;
-    color: #52706b !important;
+    color: #E97142 !important;
   }
 
   /*Cards*/
@@ -109,57 +134,59 @@ export default {
   .card-title {
     font-size: 130%;
     font-weight: bold;
-  }
-
-  .cards-home,
-  .cards {
-    /*background-color: #f8faf5;*/
+    color: #E97142;
   }
 
   .preco-card {
     text-align: center;
     vertical-align: bottom;
+    color: #DE9F8C;
   }
 
   .card-produto img {
-    /*border-top-left-radius: 9%;*/
-    /*border-top-right-radius: 9%;*/
     height: 50%;
   }
 
   .card-produto {
-    /*border-radius: 8%;*/
-    /*border: #52706b solid 5px;*/
     text-align: center;
     max-width: 20%;
     padding: 0;
     margin: 5%;
+    color: #DE9F8C;
+    border-color: black;
   }
 
   /* Botões */
 
   .botoes {
     justify-content: space-around;
-    vertical-align: bottom;
+    /*vertical-align: bottom;*/
+    display: flex;
   }
 
   .btn-detalhe:hover,
-  .btn-comprar:hover {
+  .btn-comprar:hover,
+  .btn-trash {
     transform: scale(1.2);
     transition: 0.3s ease-in-out;
+  }
+
+  .botao-apagar {
+    margin-top: 10%;
+    width: 100%;
+  }
+
+  .botao-apagar:hover {
+    background-color: darkred;
   }
 
   a:visited,
   a:link {
     text-decoration: none;
-    background-color: #b0e9df;
-    color: #498d81;
+    background-color: white;
+    color: #DE9F8C;
     font-weight: bold;
     box-shadow: none;
-  }
-
-  a:link {
-
   }
 
   /* Media */

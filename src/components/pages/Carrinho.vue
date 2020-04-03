@@ -108,7 +108,7 @@ export default {
   font-weight: bold;
   display: flex;
   justify-content: center;
-  color: #52706b !important;
+  color: #004F5A !important;
 }
 
 .sem-produto-inserido {
@@ -132,6 +132,10 @@ export default {
   /* Media */
 
   @media (max-width: 500px) {
+
+    .carrinho {
+      margin-bottom: 70%;
+    }
     .sem-produto-inserido {
       height: auto;
     }

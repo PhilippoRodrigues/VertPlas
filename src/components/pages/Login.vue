@@ -24,9 +24,7 @@
           title="senha"
         ></b-form-input>
         <b-row class="botoes">
-          <b-button type="submit" variant="primary" alt="entrar" title="entrar"
-            >Entrar</b-button
-          >
+          <b-button type="submit" alt="entrar" title="entrar">Entrar</b-button>
         </b-row>
         <b-row class="texto-cadastro">
           <b-form-text class="col-sm-12 link-cadastro"
@@ -77,14 +75,15 @@ export default {
 .login {
   margin-bottom: 21%;
   margin-top: 10%;
-  color: #52706b !important;
 }
+
 .titulo-form {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
   font-size: 3em;
   font-weight: bold;
+  color: #004F5A !important;
 }
 .form-login {
   height: 100%;
@@ -92,11 +91,27 @@ export default {
   vertical-align: middle;
 }
 
+/* Botões */
+
 .botoes {
   justify-content: center;
   margin-top: 3%;
   margin-bottom: 3%;
 }
+
+.btn-secondary {
+  text-decoration: none;
+  background-color: #b0e9df;
+  color: #498d81;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background-color: #004F5A;
+}
+
+/* Formulário de cadastro */
 
 .texto-cadastro {
   text-align: center;
@@ -110,10 +125,11 @@ export default {
   cursor: pointer;
 }
 
+/* Responsividade */
+
 @media (max-width: 500px) {
   .login {
-    margin-bottom: 70%;
-    height: 50%;
+    margin-bottom: 50%;
   }
 }
 </style>

@@ -153,7 +153,6 @@ export default {
   align-items: normal;
   padding-left: 8%;
   height: 8em;
-  margin-top: 0;
 }
 
 .navbar-nav,
@@ -280,12 +279,6 @@ a:link {
       margin-bottom: 55%;
     }
 
-    .icons-nav {
-      /*display: flex;*/
-      /*text-align: center;*/
-      /*justify-content: space-between;*/
-    }
-
     .imagem-carrinho {
       margin-right: 4.5rem;
     }
@@ -304,7 +297,6 @@ a:link {
       height: auto;
       justify-content: center;
       margin-top: 0;
-
     }
 
     .nav-items {
